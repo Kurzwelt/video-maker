@@ -1,0 +1,57 @@
+name: Make Video
+
+on:
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: "Video topic (jaise: water cycle)"
+        required: true
+        type: string
+      language:
+        description: "Script language (English / Urdu / Hindi)"
+        required: false
+        default: "English"
+        type: string
+      voice:
+        description: "Edge TTS voice (English: en-US-AriaNeural, Urdu: ur-PK-UzmaNeural)"
+        required: false
+        default: "en-US-AriaNeural"
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install fonts (emoji + Urdu/Arabic)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-core fonts-noto-color-emoji
+          fc-cache -f
+
+      - name: Install Python packages
+        run: pip install -r requirements.txt
+
+      - name: Make video
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          VOICE: ${{ inputs.voice }}
+          LANGUAGE: ${{ inputs.language }}
+          TOPIC: ${{ inputs.topic }}
+        run: python make_video.py "$TOPIC"
+
+      - name: Upload video
+        uses: actions/upload-artifact@v4
+        with:
+          name: video
+          path: out.mp4
