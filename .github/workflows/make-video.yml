@@ -17,6 +17,16 @@ on:
         required: false
         default: "en-US-AriaNeural"
         type: string
+      format:
+        description: "Format: random / mystery / countdown / myth_vs_fact / journey / numbers / cause_chain / how_it_works"
+        required: false
+        default: "random"
+        type: string
+      style:
+        description: "Look: random / 0 neon / 1 bright / 2 yellow / 3 blueprint / 4 sunset / 5 vox-layered"
+        required: false
+        default: "random"
+        type: string
 
 jobs:
   build:
@@ -48,6 +58,9 @@ jobs:
           VOICE: ${{ inputs.voice }}
           LANGUAGE: ${{ inputs.language }}
           TOPIC: ${{ inputs.topic }}
+          FORMAT: ${{ inputs.format }}
+          STYLE: ${{ inputs.style }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python make_video.py "$TOPIC"
 
       - name: Upload video
