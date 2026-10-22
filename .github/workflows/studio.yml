@@ -1,0 +1,56 @@
+name: Studio
+on:
+  workflow_dispatch:
+    inputs:
+      step:
+        description: "plan = script+prompts | render = video banao"
+        type: choice
+        options: [plan, render]
+        default: plan
+      topic:
+        description: "Topic (sirf plan me)"
+        required: false
+        default: ""
+      language:
+        description: "Narration language"
+        default: "English"
+      voice:
+        description: "Edge TTS voice"
+        default: "en-US-AriaNeural"
+permissions:
+  contents: write
+jobs:
+  studio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      LANGUAGE: ${{ inputs.language }}
+      VOICE: ${{ inputs.voice }}
+      STEP: ${{ inputs.step }}
+      TOPIC: ${{ inputs.topic }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: sudo apt-get update && sudo apt-get install -y fonts-noto-core fonts-noto-color-emoji
+      - run: pip install -r requirements.txt pillow
+      - run: python studio.py "$STEP" "$TOPIC"
+      - name: Save plan
+        if: ${{ inputs.step == 'plan' }}
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@users.noreply.github.com
+          git add plan.json plan.md frames
+          git commit -m "plan" || true
+          git push
+      - name: Upload video
+        if: ${{ inputs.step == 'render' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: video
+          path: out.mp4
