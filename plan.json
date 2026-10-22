@@ -1,0 +1,71 @@
+{
+  "title": "The World's Saltiest Death Trap",
+  "topic": "Why is the Dead Sea so salty",
+  "language": "English",
+  "format": "numbers",
+  "folder": "frames/1022-0445-why-is-the-dead-sea-so-s",
+  "style": "Flat 2D hand-drawn editorial cartoon illustration for a science explainer channel: thick, slightly wobbly black outlines, simple chunky shapes, soft flat colors (pastel greens, warm yellow, light grey, one orange accent), no gradients, no shadows, no textures. Plain off-white background (#FAFAFA). Simple stick-figure people: round head, two dot eyes, thin black stick limbs. Vertical 9:16 composition, main subject large and centered, generous empty space at the top and bottom. No text unless told.",
+  "character": "Recurring narrator character: a stick figure with a round cream-colored head, big round glasses and a small red cap.",
+  "beats": [
+    {
+      "narration": "Millions of gallons of freshwater pour into this lake every day, yet zero drops ever leave.",
+      "label": "0 OUTLETS",
+      "image_prompt": "A cutaway landscape of a rushing freshwater river pouring into a landlocked desert canyon lake blocked by sheer mountain walls on all sides."
+    },
+    {
+      "narration": "It sits 430 meters below sea level, making its shores the lowest dry land on Earth.",
+      "label": "-430 METERS",
+      "image_prompt": "A stick-figure narrator standing at the bottom of a massive rocky chasm, looking up at a dotted blue sea level line far above."
+    },
+    {
+      "narration": "That is deep enough to bury the Empire State Building underground and still have room above the spire.",
+      "label": "1,410 FEET",
+      "image_prompt": "A cross-section illustration showing the full Empire State Building standing completely submerged beneath a desert ground line."
+    },
+    {
+      "narration": "Because water cannot flow uphill to escape, it is trapped inside a blazing tectonic trench exceeding 40 degrees Celsius.",
+      "label": "40°C HEAT",
+      "image_prompt": "A giant blazing desert sun radiating harsh heat waves over a still, mirror-like lake bordered by cracked dry earth."
+    },
+    {
+      "narration": "Under this relentless heat, pure water evaporates away, abandoning every single grain of mineral it ever carried.",
+      "label": "EVAPORATION",
+      "image_prompt": "Thick ghost-like vapor trails rising into the sky from the lake, leaving gleaming white mineral crusts across the shoreline."
+    },
+    {
+      "narration": "Over thousands of years, this brutal evaporation trap produced an extreme salinity of thirty-four percent.",
+      "label": "34.2% SALTY",
+      "image_prompt": "A transparent glass cylinder where the bottom third is packed solid with dense white salt crystals beneath heavy golden brine."
+    },
+    {
+      "narration": "That is nearly ten times saltier than the ocean—like dumping ten tablespoons of salt into one coffee cup.",
+      "label": "10x OCEAN",
+      "image_prompt": "A stick figure dumping an overflowing mountain of salt crystals from a spoon directly into a small ceramic mug."
+    },
+    {
+      "narration": "Underwater, the water is so saturated that salt actively crystallizes, falling through the depths like an underwater blizzard.",
+      "label": "SALT SNOW",
+      "image_prompt": "An underwater scene showing sparkling cubic white salt crystals raining downward like heavy snowflakes onto underwater salt pillars."
+    },
+    {
+      "narration": "Modern industry now diverts ninety percent of the Jordan River before it can ever reach the basin.",
+      "label": "90% CUT OFF",
+      "image_prompt": "A massive concrete dam diverting a wide rushing river into pipelines, leaving only a tiny dry trickle heading toward the lake."
+    },
+    {
+      "narration": "Starved of fresh inflow, the Dead Sea's surface is plummeting by 1.2 meters every single year.",
+      "label": "-1.2 M / YEAR",
+      "image_prompt": "A tall measuring ruler planted in mud by the receding water, with a red arrow pointing downward past a stick-figure's height."
+    },
+    {
+      "narration": "As the water vanishes, underground freshwater dissolves ancient subterranean salt beds, opening thousands of catastrophic sinkholes along the coast.",
+      "label": "SINKHOLES",
+      "image_prompt": "An aerial view of a cracked desert beach pocked with deep, dark, gaping circular craters swallowing the dry shoreline."
+    },
+    {
+      "narration": "The Dead Sea isn't dying from salt—it is evaporating to death. Would you float here before it disappears completely?",
+      "label": "",
+      "image_prompt": "A stick-figure floating effortlessly on their back on glassy turquoise water, surrounded by surreal white salt chimneys under an open sky."
+    }
+  ]
+}
